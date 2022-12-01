@@ -13,7 +13,11 @@ app.use(express.static('public'));
 
 //////////////////////////////////////////////// User Profile /////////////////////////////////////////////////////////
 const Getprofile = require('./module/user/getprofile.js');
-app.use('/api/user/', Getprofile); //DeleteExperience
+app.use('/api/user/', Getprofile);
+
+//////////////////////////////////////////////// Partlist Cost /////////////////////////////////////////////////////////
+const Getpartlistcost = require('./module/partlist_cost/getpartlist_cost.js');
+app.use('/api/partlist/cost/', Getpartlistcost);
 
 
 
