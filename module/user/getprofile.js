@@ -4,7 +4,7 @@ const Router = express.Router();
 
 ///////////////////////// Get User All ////////////////////////////
 Router.get("/",(req,res)=>{
-    var sql = "SELECT * FROM profile";
+    var sql = "SELECT * FROM User_TB";
     mysqlcon.query(sql, (err,rows,fields)=>{
         if(!err){
             res.json(rows)
