@@ -1,13 +1,13 @@
-import { createConnection } from 'mysql';
+const mysql =  require('mysql');
 
-var mysqlcon = createConnection({
+var mysqlConnection = mysql.createConnection({
     host: "localhost",
     user: "root",
     password: "Admin@ee1",
     database: "EE_DB"
 });
 
-mysqlcon.connect((err)=>{
+mysqlConnection.connect((err)=>{
     if(!err)
       {
         console.log("Connected");
@@ -16,4 +16,4 @@ mysqlcon.connect((err)=>{
       }
   });
 
-export default mysqlcon ;
+  module.exports = mysqlConnection;
