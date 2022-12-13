@@ -1,6 +1,7 @@
 const express = require('express');
 const mysqlcon = require('./db_env/db_connection.js');
 const http = require('http');
+const SECRET = "MY_SECRET_KEY";
 
 const port = 3000;
 const app = express()
@@ -10,6 +11,15 @@ const server = http.createServer(app);
 app.use(express.json()); 
 app.use(express.urlencoded({ extended: true })); 
 app.use(express.static('public'));
+
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", 
+  "Origin, X-Requested-With, Content-Type, Accept, Authorization");
+  res.header("Access-Control-Allow-Methods","DELETE, POST, GET, OPTIONS");
+  next();
+});
+
 
 //////////////////////////////////////////////// User Profile /////////////////////////////////////////////////////////
 const Getprofile = require('./module/user/getprofile.js');
