@@ -20,6 +20,12 @@ app.use((req, res, next) => {
   next();
 });
 
+const corsOptions = {
+  origin: 'http://192.168.1.80/:3000',
+  credentials: true,
+};
+
+app.use(cors(corsOptions));
 
 //////////////////////////////////////////////// User Profile /////////////////////////////////////////////////////////
 const Getprofile = require('./module/user/getprofile.js');
