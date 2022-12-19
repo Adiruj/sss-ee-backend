@@ -25,7 +25,7 @@ const corsOptions = {
   credentials: true,
 };
 
-app.use(cors(corsOptions));
+//app.use(cors(corsOptions));
 
 //////////////////////////////////////////////// User Profile /////////////////////////////////////////////////////////
 const Getprofile = require('./module/user/getprofile.js');
