@@ -21,7 +21,7 @@ app.use((req, res, next) => {
 });
 
 const corsOptions = {
-  origin: 'http://192.168.1.80/:3000',
+  origin: 'http://192.168.1.80:3000',
   credentials: true,
 };
 
